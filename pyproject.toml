@@ -1,0 +1,30 @@
+[project]
+name = "devlens"
+version = "2.0.0"
+description = "Zero-Dependency Software Supply-Chain & Project Health Scanner"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [{ name = "DevLens Contributors" }]
+
+# INTENTIONALLY EMPTY: DevLens has zero third-party runtime dependencies.
+# See STDLIB.md for the full list of standard-library substitutions used
+# in place of common third-party packages.
+dependencies = []
+
+[project.urls]
+Homepage = "https://example.com/devlens"
+
+[project.scripts]
+devlens = "devlens.cli:main"
+
+[tool.setuptools]
+packages = ["devlens"]
+
+[build-system]
+# setuptools + wheel are standard packaging tooling, not a runtime
+# dependency of DevLens itself -- they are only needed if someone
+# chooses to `pip install` this project as a package. Running
+# `python devlens.py <path>` directly requires neither.
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
